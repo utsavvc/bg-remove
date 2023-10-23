@@ -8,7 +8,7 @@ st.set_page_config(layout="wide", page_title="Image Background Remover")
 
 st.write("## Remove background from your image")
 st.write(
-    ":dog: Try uploading an image to watch the background magically removed. Full quality images can be downloaded from the sidebar. This code is open source and available [here](https://github.com/tyler-simons/BackgroundRemoval) on GitHub. Special thanks to the [rembg library](https://github.com/danielgatis/rembg) :grin:"
+    ":dog: Try uploading an image to watch the background magically removed. Full quality images can be downloaded from the sidebar."
 )
 st.sidebar.write("## Upload and download :gear:")
 
@@ -28,10 +28,10 @@ def fix_image(upload):
     col1.image(image)
 
     fixed = remove(image)
-    col2.write("Fixed Image :wrench:")
+    col2.write("Background removed Image :wrench:")
     col2.image(fixed)
     st.sidebar.markdown("\n")
-    st.sidebar.download_button("Download fixed image", convert_image(fixed), "fixed.png", "image/png")
+    st.sidebar.download_button("Download Background removed Image", convert_image(fixed), "fixed.png", "image/png")
 
 
 col1, col2 = st.columns(2)
